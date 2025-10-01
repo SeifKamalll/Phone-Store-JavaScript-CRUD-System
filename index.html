@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Store CRUD System</title>
+    <link rel="stylesheet" href="./Styling/BootStrap.css" />
+  </head>
+  <body style="background-color: rgba(0, 3, 56, 0.873);">
+    
+    <!-- // ............................. Phone Store CRUD ............................. // -->
+
+    <div class="container d-flex align-items-center justify-content-center flex-wrap p-2 gap-3">
+      <div class="col-12 col-md-8 col-lg-6 d-flex flex-column p-3 gap-3 bg-dark text-white text-center shadow rounded border border-3 border-success">
+        <h1>Add New Phone</h1>
+        <input id="phonename" class="form-control" placeholder="Enter Phone Name">
+        <input id="phoneprice" class="form-control" placeholder="Enter Phone Price">
+        <input id="phoneqty" class="form-control" placeholder="Enter Phone Qty">
+        <button id="newphonebutton" onclick="addnewphone()" class="btn btn-success">Add New Phone</button>
+        <button id="savebutton" onclick="savephone()" class="btn btn-warning d-none">Save Phone</button>
+      </div>
+      <table class="table table-dark table-striped border border-secondary">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Phone Name</th>
+            <th>Phone Price</th>
+            <th>Phone Qty</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="./Data.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
