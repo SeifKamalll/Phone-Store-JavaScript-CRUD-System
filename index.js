@@ -6,8 +6,6 @@ let phones = [
   { name: "iphone 16 pro", price: 1000, Qty: 20 },
 ];
 
-let PhoneIndexToEdit = null;
-
 let phonename = document.querySelector("#phonename");
 let phoneprice = document.querySelector("#phoneprice");
 let phoneqty = document.querySelector("#phoneqty");
@@ -56,22 +54,22 @@ let savebutton = document.querySelector("#savebutton");
 let newphonebutton = document.querySelector("#newphonebutton");
 let editingmode = document.querySelector("h1");
 let editphone = (index) => {
-  PhoneIndexToEdit = index;
+  // PhoneIndexToEdit = index;
   editingmode.innerText = "Edit Phone";
   savebutton.classList.remove("d-none");
   newphonebutton.classList.add("d-none");
   phonename.value = phones[index].name;
   phoneprice.value = phones[index].price;
   phoneqty.value = phones[index].Qty;
+  savebutton.onclick = () => savephone(index);
 };
 
-let savephone = () => {
-  let newphone = {
+let savephone = (index) => {
+  phones[index] = {
     name: phonename.value,
     price: +phoneprice.value,
     Qty: +phoneqty.value,
   };
-  phones[PhoneIndexToEdit] = newphone;
   showphones();
   phonename.value = "";
   phoneprice.value = "";
